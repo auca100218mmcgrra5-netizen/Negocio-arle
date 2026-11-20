@@ -3,8 +3,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{% block title %}Mi Proyecto{% endblock %}</title>
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
@@ -25,8 +24,7 @@
 {% if messages %}
 <ul class="messages">
 {% for message in messages %}
-<li class="message {{ message.tags }}">{{ message }}<
-/li>
+<li class="message {{ message.tags }}">{{ message }}</li>
 {% endfor %}
 </ul>
 {% endif %}
