@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'negocio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'postgresql://mi_tienda_db_7r6m_user:zB8m0xZv8c01IxiDWKkXER94Up8i9shA@dpg-dc05fkafngtc73b2c850-a/mi_tienda_db_7r6m',
     }
 }
 
