@@ -29,7 +29,9 @@
 <button type="submit" class="btn btn-danger" style="margin-left:15px;">Cerrar sesión</button>
 
 </form>
-
+{% else %}
+<a href="{% url 'login' %}">Iniciar sesión</a>
+{% endif %}
              
             
         </nav>
