@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Mi Negocio{% endblock %}</title>
-   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <header>
@@ -14,37 +14,20 @@
             <a href="{% url 'inicio' %}">Inicio</a>
             <a href="{% url 'lista_productos' %}">Productos</a>
             <a href="{% url 'lista_categorias' %}">Categorías</a>
+            
             {% if user.is_authenticated %}
-                <span>👤 {{ user.username }}</span>
-                
+                <span style="color:#38bdf8;">👤 {{ user.username }}</span>
+                <a href="{% url 'dashboard' %}">Dashboard</a>
+                <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger" style="margin-left:15px;">Cerrar sesión</button>
+                </form>
             {% else %}
                 <a href="{% url 'login' %}">Iniciar sesión</a>
             {% endif %}
-             {% if user.is_authenticated %}
-<span style="color:#38bdf8;">👤 {{ user.username }}</span>
-<a href="{% url 'dashboard' %}">Dashboard</a>
-<form action="{% url 'logout' %}" method="post" style="display:inline;"
->
-{% csrf_token %}
-<button type="submit" class="btn btn-danger" style="margin-left:15px;">Cerrar sesión</button>
-
-</form>
- 
-            
         </nav>
     </header>
-{% if user.is_authenticated %}
-<span style="color:#38bdf8;">👤 {{ user.username }}</span>
-<a href="{% url 'dashboard' %}">Dashboard</a>
-<form action="{% url 'logout' %}" method="post" style="display:inline;">
-{% csrf_token %}
-<button type="submit" class="btn btn-danger" style="margin-left:15px;
-">Cerrar sesión</button>
 
-</form>
-{% else %}
-<a href="{% url 'login' %}">Iniciar sesión</a>
-{% endif %}
     <div class="container">
         {% if messages %}
             <ul class="messages">
@@ -62,3 +45,4 @@
     </footer>
 </body>
 </html>
+
