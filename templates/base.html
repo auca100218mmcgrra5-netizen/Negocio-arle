@@ -20,7 +20,7 @@
             {% else %}
                 <a href="{% url 'login' %}">Iniciar sesión</a>
             {% endif %}
-            <a href="{% url 'logout' %}">Cerrar sesión</a>
+            
         </nav>
     </header>
 {% if user.is_authenticated %}
