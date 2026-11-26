@@ -16,10 +16,11 @@
             <a href="{% url 'lista_categorias' %}">Categorías</a>
             {% if user.is_authenticated %}
                 <span>👤 {{ user.username }}</span>
-                <a href="{% url 'logout' %}">Cerrar sesión</a>
+                
             {% else %}
                 <a href="{% url 'login' %}">Iniciar sesión</a>
             {% endif %}
+             <a href="{% url 'logout' %}">Cerrar sesión</a>
             
         </nav>
     </header>
